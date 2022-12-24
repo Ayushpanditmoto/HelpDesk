@@ -60,8 +60,15 @@ const loginUser = asyncHandler(async (req, res) => {
   res.status(401);
   throw new Error("Invalid email or password");
 });
+const getMe = asyncHandler(async (req, res, next) => {
+  res.json({
+    _id: req.user._id,
+    name: req.user.name,
+  });
+});
 
 module.exports = {
   registerUser,
   loginUser,
+  getMe,
 };
