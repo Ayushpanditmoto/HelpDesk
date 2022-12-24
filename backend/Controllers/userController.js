@@ -61,10 +61,19 @@ const loginUser = asyncHandler(async (req, res) => {
   throw new Error("Invalid email or password");
 });
 const getMe = asyncHandler(async (req, res, next) => {
-  res.json({
+  const user = {
     _id: req.user._id,
     name: req.user.name,
-  });
+    email: req.user.email,
+    isAdmin: req.user.isAdmin,
+  };
+  if (user) {
+    res.status(200);
+    return res.send(user);
+  } else {
+    res.status(404);
+    return next(new Error("User not found"));
+  }
 });
 
 module.exports = {
