@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
   res.send(`Backend is running on port ${port}`);
 });
 app.use("/api/users", require("./Routes/userRoutes"));
+app.use("/api/tickets", require("./Routes/ticketRoutes"));
 app.use(errorHandler);
 
 app.listen(port, () => {

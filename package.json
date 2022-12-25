@@ -1,0 +1,26 @@
+{
+  "name": "helpdesk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start":"cd backend && npm start",
+    "server": "cd backend && npm run dev",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ayushpanditmoto/HelpDesk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ayushpanditmoto/HelpDesk/issues"
+  },
+  "homepage": "https://github.com/Ayushpanditmoto/HelpDesk#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
